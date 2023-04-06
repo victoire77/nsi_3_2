@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!--
+    Auteurs : JACQ--BODET Malo, ROCHER Salomé, FEFEU Marie
+
+    Ce programme répond au cahier des charges de la deuxième partie du 3ème projet,
+    en créant la page HTML (PLUS BONUS)
+-->
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet 3 - Choixpeau magique</title>
+    <link rel="stylesheet" href="Projet_3.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js"></script>
+	<link href="https://fonts.cdnfonts.com/css/harry-potter" rel="stylesheet">
+</head>
+
+<body>
+    <section class="top-page">
+        <header class="header">
+            <img src="Images/logo3.png" alt="Logo du site">
+            <nav class="nav">
+                <li><a>Accueil</a></li>
+                <li><a href="#4_maisons">Les 4 maisons</a></li>
+                <li><a href="#all-images">Harry potter, c'est quoi</a></li>
+            </nav>
+        </header>
+        <div class="landing-page">
+            <h1 class="big-title">Le test du Choixpeau Magique</h1>
+            <a class="scroll-down" href="#4_maisons">Scroll <i class="fas fa-angle-down"></i></a>
+        </div>
+        
+    </section>
+
+    <section class="4_maisons" id="4_maisons">
+        <h2 class="section-title">
+            Les 4 maisons 
+        </h2>
+        <div class="best-maisons">
+            <a class="image-box maison1 no-grid">
+                <div class="plant-details">
+                    <p class="image-name">Gryffondor</p>
+					<button onclick="window.location.href = 'Gryffondor/Projet_3_Gryffondor.html';">Cliquez Ici</button>
+                </div>
+            </a>
+            <a class="image-box maison2 no-grid">
+                <div class="plant-details">
+                    <p class="image-name">Serpentard</p>
+					<button onclick="window.location.href = 'Serpentard/Projet_3_Serpentard.html';">Cliquez Ici</button>
+                </div>
+            </a>
+            <a class="image-box maison3 no-grid">
+                <div class="plant-details">
+                    <p class="image-name">Serdaigle</p>
+					<button onclick="window.location.href = 'Serdaigle/Projet_3_Serdaigle.html';">Cliquez Ici</button>
+                </div>
+            </a>
+            <a class="image-box maison4 no-grid">
+                <div class="plant-details">
+                    <p class="image-name">Poussoufle</p>
+					<button onclick="window.location.href = 'Poussoufle/Projet_3_Poussoufle.html';">Cliquez Ici</button>
+                </div>
+            </a>
+        </div>
+    </section> 
+
+    <section class="all-images" id="all-images">
+        <h2 class="section-title">
+            Harry Potter, c'est quoi ?
+        </h2>
+        <div class="image-grid">
+            <a class="image-grid1 image-box">
+                <div class="plant-details">
+                    <p class="image-name">Harry-Potter</p>
+                </div>
+            </a>
+            <a class="image-grid2 image-box">
+                <div class="plant-details">
+                    <p class="image-name">Harry-Potter, Hermionne, et Ron</p>
+                </div>
+            </a>
+            <a class="image-grid3 image-box">
+                <div class="plant-details">
+                    <p class="image-name">Voldemort</p>
+                </div>
+            </a>
+            <a class="image-grid4 image-box">
+                <div class="plant-details">
+                    <p class="image-name">Ron</p>
+                </div>
+            </a>
+            <a class="image-grid5 image-box">
+                <div class="plant-details">
+                    <p class="image-name">Hermionne</p>
+                </div>
+            </a>
+            <a class="image-grid6 image-box">
+                <div class="plant-details">
+                    <p class="image-name">Les 4 maisons</p>
+					<button onclick="window.location.href = 'Harry-Potter/Harry-Potter_cest_quoi.html';">Cliquez Ici</button>
+                </div>
+            </a>
+        </div>
+    </section> 
+	
+	<section class= "insh" id="insh">
+		<h2 class="section-title">
+            Test du Choixpeau Magique
+        </h2>
+		<div id = "zone_1">
+			<h1> 
+				<p> Bienvenue<br>
+					sur le test du <br>
+					Choixpeau Magique</p>
+			<h1>
+			<div id= "gauche_titre"> <img src= "Images/imagelogo2.png" height=300> </div>
+			<div id = "droite_titre"> <img src= "Images/imagelogo2.png" height=300> </div>
+		</div>
+		
+		<div id="centre">
+            <div id = "zone_interaction">
+                <h2>
+                <p>  Ce test a pour but d'identifier vos parts d'appartenance à chacune des maisons de Poudlard (Gryffondor, Poussoufle, Serpentard, Serdaigle).
+					 Dans l'oeuvre d'Harry Potter,le Choixpeau vous attribue une maison en prenant compte de vos traits de personnalité, vos valeurs 
+					 et vos envies. <br> <br>
+				     Pour réaliser ce test, cliquez sur "Commencer", puis veuillez, pour chaque question, sélectionner la réponse qui vous convient</p>
+                    <button class="button2", id="bouton_debut" onclick="window.location.href = 'choixpeau_magique/test_choixpeau_magique.html';" >Commencer</button>
+			</div>
+			
+		</div>
+
+                </h2>
+            </div>
+	
+	</section>
+    
+	
+   <footer>
+		<p class="copiright">&copy; 2023 - NSI Projet Clémenceau</p>
+		<a href="" class="gsv">  Nsi Clémenceau :/</a>
+	</footer>
+</body>
+</html>
