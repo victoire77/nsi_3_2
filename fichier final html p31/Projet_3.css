@@ -1,0 +1,297 @@
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap);
+
+* {
+    font-family: 'Montserrat';
+}
+
+body {
+    margin: 0 auto;
+}
+
+
+/* tete de page */
+
+header.header {
+    display: flex;
+    align-items: center;
+}
+
+header.header img {
+    width: 150px;
+}
+
+section.top-page {
+    background: url('Images/fond.jpeg');
+    background-size: cover;
+    height: 110vh;
+    padding: 25px;
+}
+
+/* page de bienvenue (landing page) */
+
+.landing-page {
+    position: relative;
+    padding: 20px 50px;
+}
+
+.big-title {
+    color: white;
+    font-size:  70px;
+    font-family: 'Abril FatFace', cursive;
+    font-weight: 100;
+    width: 75%;
+}
+
+.scroll-down {
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    bottom: 0;
+}
+
+/* menu de navigation */
+
+nav.nav {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    width: 400px;
+    margin-left: 30px;
+}
+
+nav.nav li a {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+/* Les 4 maisons de Poudlard */
+
+.section-title {
+    font-size: 50px;
+    font-family: 'Abril FatFace', cursive;
+    font-weight: 100;
+    position: relative;
+}
+
+.section-title::before {
+    content: "";
+    position: absolute;
+    background-color: #ADD981;
+    width: 50px;
+    height: 7px;
+    bottom: 0;
+}
+
+.4_maisons {
+    margin: 100px;
+}
+
+.best-maisons {
+    min-height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+	background: black;
+	margin: 100px;
+	padding-bottom: 100px;
+	padding-top: 100px;
+}
+
+.image-box {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+
+.no-grid {
+    min-width: 350px;
+    height: 500px;
+    flex: 1;
+}
+		/* Les images (maisons) */
+
+.maison1 {
+    background-image: url(Images/Gryffondortest.png);
+	margin-left: 100px;
+	margin-right: 20px;
+	border: 2px white solid;
+}
+
+.maison2 {
+    background-image: url(Images/Serpentardtest.png);
+	margin-left: 20px;
+	margin-right: 100px;
+	border: 2px white solid;
+}
+
+.maison3 {
+    background-image: url(Images/Serdaigletest.png);
+	
+	margin-left: 100px;
+	margin-right: 20px;
+	border: 2px white solid;
+
+}
+
+.maison4 {
+    background-image: url(Images/Poussoufletest.png);
+	margin-left: 20px;
+	margin-right: 100px;
+	border: 2px white solid;
+}
+
+.plant-details {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    background-color: #FFFFFFDF;
+    padding: 5px 20px;
+}
+
+.image-name {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 3px;
+}
+
+
+
+/* Images /+ Harry-Potter, c'est ? */
+
+.all-images {
+    margin: 100px;
+}
+
+.image-grid {
+    display: grid;
+    min-height: 150vh;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 400px);
+}
+
+.image-grid1 {
+    background-image: url(Images/harry-potter.jpg);
+    grid-column: 1/3;
+    grid-row: 1/3;
+}
+
+.image-grid2 {
+    background-image: url(Images/2.jpg);
+    grid-column: 3/5;
+}
+
+.image-grid3 {
+    background-image: url(Images/3.jpg);
+    grid-column: 3/5;
+}
+
+.image-grid4 {
+    background-image: url(Images/4.jpg);
+    grid-column: 1;
+    grid-row: 3/5;
+}
+
+.image-grid5 {
+    background-image: url(Images/5.jpg);
+    grid-column: 2/4;
+    grid-row: 3/5;
+}
+
+.image-grid6 {
+    background-image: url(Images/6.jpg);
+    grid-column: 4;
+    grid-row: 3/5;
+}
+
+/* test du choixpeau magique */
+
+#insh {
+    background-image: url('Images/fond_maisons.png');
+    font-family: Arial;
+    padding-left: 80px;
+    padding-right: 80px;
+	padding-top: 30px;
+	padding-bottom: 25px;
+    margin: 100px;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+}
+
+#zone_1 {
+    padding: 20px;
+    text-align: center;
+    background: #D2B48C;  
+	-webkit-border-radius: 25px;
+	border: groove;
+	height: 150px;
+	width: 955px;
+}
+
+#gauche_titre {
+	position: relative;
+	left: -255px;
+	top: -230px;
+}
+
+#droite_titre {
+	position: relative;
+	right: -475px;
+	top: -535px;
+}
+
+#centre {
+	background-color: #D2B48C;
+	min-height: 300px;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 10px;
+	
+}
+
+#zone_interaction {
+    font-size:  13px;
+	margin: 30px;
+}
+
+/* Bouton */
+button.button2 {
+    padding: 30px 40px;
+	margin: 20px;
+    width: auto;
+    color: black;
+    border: 2px solid white;
+    background-color: transparent;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border-radius: 6px;
+    font-weight: 550;
+}
+
+button:hover {
+    background-color: yellow;
+    color: rgb(0, 0, 0);
+    transform: scale(1.5);
+    background-color: yellow;
+    color: rgb(0, 0, 0);
+    box-shadow: 0px 0px 10px yellow;
+}
+
+
+/* pied de page */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 100px;
+    font-weight: 600;
+}
+
+footer a.cgv {
+    text-decoration: none;
+    color: black;
+}
