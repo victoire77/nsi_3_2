@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title> essai </title>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/brython@3.11.0/brython.min.js">
+    </script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/brython@3.11.0/brython_stdlib.js">
+    </script>
+</head>
+
+<body onload="brython()">
+
+<script type="text/python">
+from browser import document, html
+import functy
+import random
+questions = functy.to_table()
+print(questions)
+profil = []
+question = "" # variable globale
+courage = 0
+ambition = 0
+intelligence = 0 
+good = 0
+profil_test = []
+
+i = 0
+def nouvellequestion1(evt):
+    global i
+    values = []         
+    question = questions[i]
+    question_precedante = questions[i-1]
+    if i != 0:
+        values.append(question_precedante[' value 1'])
+    
+    document['question'].clear()
+    document['question'].text = question['Questions']
+    document['choix1'].clear()
+    document['choix1'].text = question['reponse1']       
+    document['choix2'].clear()
+    document['choix2'].text = question['reponse2']
+    document['choix3'].clear()
+    document['choix3'].text = question['reponse3']       
+    profil.append(values)
+    print(profil)
+    print(i)
+    i = i + 1
+    
+
+def nouvellequestion2(evt):
+    global i
+    values = []
+    question = questions[i]
+    question_precedante = questions[i-1]
+    if i != 0:
+        values.append(question_precedante[' value 2'])
+      
+    document['question'].clear()
+    document['question'].text = question['Questions']
+    document['choix1'].clear()
+    document['choix1'].text = question['reponse1']       
+    document['choix2'].clear()
+    document['choix2'].text = question['reponse2']
+    document['choix3'].clear()
+    document['choix3'].text = question['reponse3']      
+    profil.append(values)
+    print(profil)
+    print(i)
+    i = i + 1
+    
+def nouvellequestion3(evt):
+    global i
+    values = []
+    question = questions[i]
+    question_precedante = questions[i-1]
+    if i != 0:
+        values.append(question_precedante[' value 3'])
+    
+    document['question'].clear()
+    document['question'].text = question['Questions']
+    document['choix1'].clear()
+    document['choix1'].text = question['reponse1']       
+    document['choix2'].clear()
+    document['choix2'].text = question['reponse2']
+    document['choix3'].clear()
+    document['choix3'].text = question['reponse3']      
+    profil.append(values)
+    print(profil)   
+    print(i)
+    i = i + 1
+
+def detache(ev):
+    global i
+    profil_test = []
+    if i == 15:
+        document['choix1'].unbind("click", nouvellequestion1)
+        document['choix2'].unbind("click", nouvellequestion2)
+        document['choix3'].unbind("click", nouvellequestion3)
+        del document['choix1']
+        del document['choix2']
+        del document['choix3'] 
+        del document["question"]  
+        
+        link = html.A('Résultats', href='http://www.python.org')
+        document["mymessage"] = link   #pour la mise en page html, ligne inutile là mtn mais peu être plus facile de le déplacer dans la page à mettre en forme si je l'inclus d'un un paragraphe
+        document <= link
+        #for j in profil[1:]:
+            #profil_test = [sum(j[0]), sum(j[1]), sum(j[2]), sum(j[3])]
+        
+
+
+document["choix1"].bind("click", detache)
+document["choix2"].bind("click", detache)
+document["choix3"].bind("click", detache)
+
+document['choix1'].bind('click', nouvellequestion1)
+document['choix2'].bind('click', nouvellequestion2)
+document['choix3'].bind('click', nouvellequestion3)
+
+</script>
+
+<div id="question">Tu es prêt à savoir quelle est ta maison ?</div>
+<button name="button" id="choix1">Oui, j'ai hâte</button>
+<button name="button" id="choix2">Bien sûr</button>
+<button name="button" id="choix3">Pourquoi pas</button>
+<p id="mymessage"></p>
+
+</body>
+
+</html>
