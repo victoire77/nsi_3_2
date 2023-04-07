@@ -11,7 +11,7 @@ Auteurs : JACQ--BODET Malo
 # import des modules
 import csv
 from collections import Counter
-
+from ast import literal_eval
 # définition des constantes
 
 K_NEIGHBORS = 5 # nombre de voisins les plus proches
@@ -121,129 +121,44 @@ def most_frequent(list):
 
     return out[0]
 
-
-def determination_personality(profile):
-    """
-    Associe les valeurs des caractéristiques à leur élément 
-
-    Entrée : profile, tuple
-    Sortie : profile_values, tableau de caractéristiques mis à jour
-    """
-    profile_values = []
-    profile_values.append(('Courage', profile[0]))
-    profile_values.append(('Ambition', profile[1])), 
-    profile_values.append(('Intelligence', profile[2])) 
-    profile_values.append(('Tendance au bien', profile[3]))
-    return profile_values
-
-def ask_profile():
-    """
-    Demande à l'utilisateur de séléctionner un profil parmis les 5 existants ou de sélectionner son propre profil
- 
-    Sortie : profil, tuple de 4 entiers représentant les caractéristiques du profil
-    """
-    profil = None
-    
-    first_choice = input("Voulez-vous tester un des profils par défaut (1) ou saisir le votre (2) ? ")
-
-    if first_choice == "1":
-        profil1 = (9, 2, 8, 9)
-        profil2 = (6, 7, 9, 7)
-        profil3 = (3, 8, 6, 3)
-        profil4 = (2, 3, 7, 8)
-        profil5 = (3, 4, 8, 8)
-
-        answer = input("""Quel profil voulez vous tester ?
-                Il y a le profil 1 avec 9 de courage, 2 d'ambition, 8 d'intelligence et 9 de tendance au bien ;
-                    le profil 2 avec 6 de courage, 7 d'ambition, 9 d'intelligence et 7 de tendance au bien ;
-                    le profil 3 avec 3 de courage, 8 d'ambition, 6 d'intelligence et 3 de tendance au bien ;
-                    le profil 4 avec 2 de courage, 3 d'ambition, 7 d'intelligence et 8 de tendance au bien ;
-                    ou bien le profil 5 avec 3 de courage, 4 d'ambition, 8 d'intelligence et 8 de tendance au bien
-                Tapez le numéro du profil pour savoir à quel maison le choixpeau l'envoie""")
-
-        if answer.isdigit():
-            answer = int(answer)
-            if answer == 1:
-                profil = profil1
-            elif answer == 2:
-                profil = profil2
-            elif answer == 3:
-                profil = profil3
-            elif answer == 4:
-                profil = profil4
-            elif answer == 5:
-                profil = profil5
-
-    elif first_choice == "2":
-        answer = input("""Entrez 4 chiffres de 1 à 9 séparés par un espace qui corresponderont respectivement :
-                        au courage,
-                        à l'ambition,
-                        à l'intelligence
-                        et la tendance au bien.""").split()
-        answer = list(map(int, answer))
-        if (len(answer) == 4):
-            profil = tuple(answer)
-
-    return profil
-
-def display_profile(values):
-    """
-    Affichage du profil
-
-    Entrée : values, tableau (représentant le profil)
-    """
-    print("Voici votre profil : ")
-    for element in values:    
-        print(f"Vous avez comme {element[0]} un niveau équivalent à {element[1]}")
-
-def display_neighbors(values):
-    """
-    Affichage des voisins
-
-    Entrée : values, tableau (représentant le profil) 
-    """
-    print("Vos voisins les plus proches sont : ")
-    for element in values:
-        print(f"{element[0]} qui a comme maison {element[1]}")
-
-def display_house(house):
-    """
-    Affichage de la maison à laquelle le personnage est finalement affecté
-
-    Entrée : house, tableau (représentant le profil) 
-    """
-    print(f"En fonction de ces voisins, il s'est donc avéré que vous étiez {house}")
-
-
-# Programme principal avec appel des fonctions
-
-characters_tab = read_csv_file("Characters.csv")
-characteristics_tab = read_csv_file("Caracteristiques_des_persos.csv")
-characters = merge_tables(characters_tab, characteristics_tab)
-index_id = create_indexid(characters)
-
-profil = ask_profile()
-if profil == None:
-    print("Vous n'avez pas saisi la/les bonnes valeurs. "          "Veuillez recommencer") 
-else:         
+def fonction_finale(profil):
+    characters_tab = read_csv_file("Characters.csv")
+    characteristics_tab = read_csv_file("Caracteristiques_des_persos.csv")
+    characters = merge_tables(characters_tab, characteristics_tab)
+    index_id = create_indexid(characters) 
     distance = distance_calculation(characters, profil) # Calcul des distances euclidiennes
-
     index = neighbors_index(K_NEIGHBORS, distance)
-
     houses = []
     for i in index:
-        houses.append(index_id[i]['House']) # Détermine la maison à attribuer
-    
+        houses.append(index_id[i]['House']) # Détermine la maison à attribuer   
     final_house = (most_frequent(houses))
-
-    profil_values = determination_personality(profil)
-
     response = []
     for i in index:
         response.append((index_id[i]['Name'], index_id[i]['House']))
-    
-    display_profile(profil_values)
-    display_neighbors(response)
-    display_house(final_house)
+    reponse = []
+    reponse.append(final_house)
+    reponse.append(response)
+    return reponse
 
-
+def formation_profil(profil_temporaire):
+    profil = []
+    courage = 0
+    ambition = 0
+    intelligence = 0
+    good = 0
+    l = []
+    for j in profil_temporaire[1:]:
+        for i in j:            
+            l.append(literal_eval(i))
+    for i in l:
+        courage += i[0]    
+        ambition += i[1]
+        intelligence += i[2]
+        good += i[3]
+    profil = [courage, ambition, intelligence, good]
+    for i in range(len(profil)):
+        if profil[i] < 0:
+            profil[i] = 0
+        if profil[i] > 9:
+            profil[i] = 9    
+    return profil
