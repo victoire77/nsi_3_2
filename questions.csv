@@ -1,16 +1,15 @@
-questions;réponse 1;réponse 2;réponse 3;value 1;value 2;value 3;(courage, ambition, intelligence, good)
-Que ferais tu si ton pire ennemi se retrouvait piéger dans des sables mouvants ?;Tu vas l’aider sans aucune hésitation;Tu passes ton chemin, ce n’est pas ton problème;	Tu l’enfonces encore plus;(9,5,5,9);(0,5,5,5);(5,5,5,0)	
-Quelle est ta plus grande peur ?;Mourir sans avoir atteint tes rêves;Te retrouver seul;Perdre la mémoire;(5,9,5,5);(5,5,5,9);(5,5,9,5)	
-Ton futur est :	Incertain;Tout planifié de A à Z;Une aventure;(5,0,0,5);(5,9,9,5);(9,5,5,5)	
-La chose la plus importante pour toi est :;L’argent;L’amour;Autre chose;(5,9,9,5);(9,5,5,9);(9,5,9,5)	
-Dans une situation stressante tu :;Panique;Es affecté mais surmonte le stress;reste calme;(0,5,0,5);(9,5,5,5);(5,5,9,5)	
-Par rapport aux autres tu :;Te sens supérieur;Te sens égal;Te sens inférieur;(5,9,9,5);(5,5,9,9);(5,0,0,9)	
-Tu prends des décisions :;Avec difficulté;Sans réfléchir;Après réflexion;(5,5,0,9);(9,0,0,5);(0,9,9,5)	
-Lors d’un débat quel est le plus important pour toi ?;Gagner;Être certain que personne n’est contrarié;Avoir raison;(5,9,9,0);(5,0,0,9);(5,9,9,0)	
-Si ton enfant avait des problèmes à l’école quel serait ton conseil ?;De contre-attaquer;De les dénoncer;De faire profil bas;(9,5,5,0);(5,9,9,0);(0,5,9,9)	
-Il y a un test demain et tu n’as pas révisé, que fais tu ?;Tu révises autant que tu peux avec le temps qu’il te reste;Tu triches;Tu mises tout sur ton talent et ta chance;(5,5,9,5);(5,9,0,0);(5,5,9,5)	
-Fasses à ta plus grande peur tu :;L’affronte jusqu’à la surmonter;Panique et fuis;Reste calme et trouve une solution pour ne pas avoir à la confronter;(9,5,5,5);(0,5,5,5);(5,5,9,5)	
-Tu es perdu en forêt, que fais tu ?;Tu cherches la civilisation pour pouvoir demander ton chemin;Tu avances, on verra bien;Tu fais une pause pour réfléchir avant de continuer avec une stratégie pour ne pas te perdre encore plus;(5,5,9,9);(9,5,5,5);(5,5,9,5)	
-Dans un travail de groupe tu :;Fais presque tout;Fais presque rien;Fais ta partie, comme prévu;(5,5,5,9);(5,9,5,5);(5,5,9,5)	
-As tu un grand sens de justice ?;Oui;Moyennement;Non;(9,5,5,9);(5,5,5,5);(0,5,5,0)	
-A quel point es-tu influençable ?;Beaucoup;Pas vraiment;C’est moi qui influence les autres;(5,5,5,9);(9,5,9,5);(5,9,5,5)	
+Questions,reponse1,reponse2,reponse3, value 1, value 2, value 3
+Que ferais tu si ton pire ennemi se retrouvait piéger dans des sables mouvants ?,Tu vas l'aider sans aucune hÃÂ©sitation,"Tu passes ton chemin, ce n'est pas ton problÃÂ¨me",Tu l'enfonces encore plus,"(5,0,0,5)","(-2,0,0,-2)","(0,0,0,-5)"
+Quelle est ta plus grande peur ?,Mourir sans avoir atteint tes rÃÂªves,Te retrouver seul,Perdre la mÃÂ©moire,"(2,5,0,0)","(0,0,0,5)","(0,0,5,0)"
+Ton entourage te dÃÂ©cris souvent commeÃÂ :,Curieux,IrrÃÂ©flÃÂ©chi,Tu n'as pas d'entourage,"(0,0,5,0)","(5,-2,-5,0)","(0,2,0,-5)"
+Ton futur estÃÂ :,Incertain,Tout planifiÃÂ© de A ÃÂ ÃÂ  Z,Une aventure,"(2,-5,-2,0)","(0,5,5,0)","(5,0,0,0)"
+Un souhait,Laissez moi me battre,Laissez moi gagner,Laissez moi tranquille,"(5,2,0,-5)","(5,5,0,0)","(0,0,5,5)"
+La chose la plus importante pour toi estÃÂ :,L'argent,L'amour,Autre chose,"(0,5,2,0)","(2,0,0,5)","(5,0,5,0)"
+Dans une situation stressante tuÃÂ :,Panique,Tu es affectÃÂ© mais surmonte le stress,reste calme,"(-5,0,-5,0)","(5,0,0,0)","(0,0,5,0)"
+Par rapport aux autres tuÃÂ :,Te sens supÃÂ©rieur,Te sens ÃÂ©gal,Te sens infÃÂ©rieur,"(0,5,2,0)","(0,0,5,2)","(0,-5,-2,5)"
+Tu prends des dÃÂ©cisions,Avec difficultÃÂ©,Sans rÃÂ©flÃÂ©chir,AprÃÂ¨s rÃÂ©flexion ,"(0,0,-5,5)","(5,-5,-5,0)","(-5,2,5,0)"
+Ta chambre est :,Pleine de trophÃÂ©es,Bien rangÃÂ©,Le refuge de divers animaux,"(0,5,2,0)","(0,0,5,0)","(0,0,-2,5)"
+Lors d'un dÃÂ©bat quel est le plus important pour toiÃÂ ?,Gagner,ÃÂªtre certain que personne n'est contrariÃÂ©,Avoir raison,"(0,5,2,-2)","(0,-5,-2,5)","(0,2,5,-2)"
+Si ton enfant avaient des problÃÂ¨mes ÃÂ ÃÂ  l'ÃÂ©cole quel serait ton conseil ?,De contre-attaquer,De les dÃÂ©noncer,De faire profil bas,"(5,0,0,-2)","(0,2,5,-2)","(-5,0,2,5)"
+"Il y a un test demain et tu n'as pas rÃÂ©visÃÂ©, que fais tuÃÂ ?",Tu rÃÂ©vises autant que tu peux avec le temps qu'il te reste,Tu triches,Tu mises tout sur ton talent et ta chance,"(0,0,5,0)","(0,5,-5,-5)","(0,0,5,0)"
+Fasses ÃÂ ÃÂ  ta plus grande peurÃÂ tuÃÂ :,L'affronte jusqu'ÃÂ ÃÂ  la surmonter,Panique et fuis,Reste calme et trouve une solution pour ne pas avoir ÃÂ ÃÂ la confronter,"(5,0,0,0)","(-5,0,0,0)","(0,0,5,0)"
