@@ -15,17 +15,18 @@
 <body onload="brython()">
 
 <script type="text/python">
+# Import modules et fichiers
 from browser import document, html
-import functy
+import func_csv
 import kPPV_JACQ_BODET_FEFEU_ROCHER as kppv
-questions = functy.to_table()
-print(questions)
+questions = func_csv.to_table()
 
 profil_temporaire = []
 question = ""
+i = 0  # i étant le numéro de la question
 
-i = 0  #i etant le numéro de la question
-def nouvelle_question(): 
+# Définition des fonctions
+def nouvelle_question():    # Modifie les questions et les choix de réponses sur la page HTML
     document['question'].textContent = questions[i]['Questions']
     document['choix1'].textContent = questions[i]['reponse1']       
     document['choix2'].textContent = questions[i]['reponse2']
@@ -35,16 +36,13 @@ def reponse1(evt):
     global i
     values = []         
     question = questions[i]  
-    values.append(question[' value 1'])
+    values.append(question[' value 1']) # Ajoute la valeur de la réponse de l'utilisateur dans 'values'
     profil_temporaire.append(values)
-    print(profil_temporaire)
-
-    if i < len(questions)-1:       
-        print(i)
+    if i < len(questions)-1:       # On vérifie que l'on arrive pas à la fin des questions
         i = i + 1
         nouvelle_question()
     else:            
-        affichage_fin()
+        affichage_fin()   # Si non, on affiche les résultats à l'utilisateur
 
 def reponse2(evt):
     global i
@@ -52,10 +50,7 @@ def reponse2(evt):
     question = questions[i]   
     values.append(question[' value 2'])       
     profil_temporaire.append(values)
-    print(profil_temporaire)
-
     if i != len(questions)-1:        
-        print(i)
         i = i + 1
         nouvelle_question()
     else:       
@@ -67,18 +62,14 @@ def reponse3(evt):
     question = questions[i]
     values.append(question[' value 3'])      
     profil_temporaire.append(values)
-    print(profil_temporaire)
-
     if i != len(questions)-1:          
-        print(i)
         i = i + 1
         nouvelle_question()
     else:       
         affichage_fin()
 
 def affichage_fin():
-    donnee_finale = kppv.fonction_finale(kppv.formation_profil(profil_temporaire)) 
-    print(donnee_finale)
+    donnee_finale = kppv.fonction_finale(kppv.formation_profil(profil_temporaire))  #donnee_finale comprend la maison attribuée et les plus proches voisins
     del document['choix1']
     del document['choix2']
     del document['choix3']
@@ -91,7 +82,12 @@ def affichage_fin():
     document <= html.H2(donnee_finale[1][1][1])
     document <= html.H2(donnee_finale[1][2][0])
     document <= html.H2(donnee_finale[1][2][1])
+    document <= html.H2(donnee_finale[1][3][0])
+    document <= html.H2(donnee_finale[1][3][1])
+    document <= html.H2(donnee_finale[1][4][0])
+    document <= html.H2(donnee_finale[1][4][1])
 
+# Appel des fonctions 
 nouvelle_question()
 document['choix1'].bind('click', reponse1)
 document['choix2'].bind('click', reponse2)
@@ -99,12 +95,10 @@ document['choix3'].bind('click', reponse3)
 
 </script>
 
-<div id="question"></div>
+<h1><div id="question"></div></h1>
 <button name="button" id="choix1"></button>
 <button name="button" id="choix2"></button>
-<button name="button" id="choix3"></button>
-<p id="mymessage"></p> 
+<button name="button" id="choix3"></button> 
 
 </body>
-
 </html>

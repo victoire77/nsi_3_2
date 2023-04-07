@@ -107,6 +107,11 @@ def neighbors_index(k, tab):
 
 
 def most_frequent1(list):
+    '''
+    Renvoie la maison la plus fréquente
+    Entrée : list, liste comprenant les k plus proches maisons
+    Sortie : maison_finale, liste comprenant la maison attribuée à l'utilisateur
+    '''
     houses_dic = {'Gryffindor': 0,
                   'Ravenclaw': 0,
                   'Slytherin': 0,
@@ -120,15 +125,15 @@ def most_frequent1(list):
             houses_dic['Slytherin'] += 1
         if i == 'Hufflepuff':
             houses_dic['Hufflepuff'] += 1
-    best_house_tab = []
-    max = 0
+    maison_finale = []
+    maximum = 0
     for item in houses_dic.items():
-        if item[1] > max:
-            max = item[1]
-            best_house_tab = [item[0]]
-        elif item[1] == max:
-            best_house_tab.append(item[0])
-    return best_house_tab
+        if item[1] > maximum:
+            maximum = item[1]
+            maison_finale = [item[0]]
+        elif item[1] == maximum:
+            maison_finale.append(item[0])
+    return maison_finale
 
 def fonction_finale(profil):
     '''
@@ -156,7 +161,8 @@ def fonction_finale(profil):
 
 def formation_profil(profil_temporaire):
     '''
-    Transforme une liste de listes de chaines de caractères ressemblant à un liste de listes de tuples, exemple : [['(5,0,0,5)'], ['(2,5,0,0)']]
+    Transforme une liste de listes de chaines de caractères ressemblant à un liste de listes de 
+    tuples, exemple : [['(5,0,0,5)'], ['(2,5,0,0)']]
     Entrée : profil_temporaire, liste contenant les différentes réponses de l'utilisateur
     Sortie : profil, tableau contenant les valeurs des qualités modifiées
     '''
@@ -168,8 +174,8 @@ def formation_profil(profil_temporaire):
     l = []
     for j in profil_temporaire[1:]:
         for i in j:            
-            l.append(literal_eval(i))
-    for i in l:
+            l.append(literal_eval(i))   # Permet de transformer en tuple
+    for i in l:              # Ici on fait la somme de touts les valeurs
         courage += i[0]    
         ambition += i[1]
         intelligence += i[2]
