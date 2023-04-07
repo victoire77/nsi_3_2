@@ -24,7 +24,7 @@ print(questions)
 profil_temporaire = []
 question = ""
 
-i = 0
+i = 0  #i etant le numéro de la question
 def nouvelle_question(): 
     document['question'].textContent = questions[i]['Questions']
     document['choix1'].textContent = questions[i]['reponse1']       
@@ -43,11 +43,8 @@ def reponse1(evt):
         print(i)
         i = i + 1
         nouvelle_question()
-    else:
-        apparence = kppv.formation_profil(profil_temporaire)
-        print(apparence)
-        
-        donnee_finale = kppv.fonction_finale(apparence) 
+    else:            
+        affichage_fin()
 
 def reponse2(evt):
     global i
@@ -61,11 +58,8 @@ def reponse2(evt):
         print(i)
         i = i + 1
         nouvelle_question()
-    else:
-        apparence = kppv.formation_profil(profil_temporaire)
-        print(apparence)
-        
-        #donnee_finale = kppv.fonction_finale(apparence)
+    else:       
+        affichage_fin()
 
 def reponse3(evt):
     global i
@@ -79,13 +73,26 @@ def reponse3(evt):
         print(i)
         i = i + 1
         nouvelle_question()
-    else:
-        apparence = kppv.formation_profil(profil_temporaire)
-        
-        #donnee_finale = kppv.fonction_finale(apparence)
+    else:       
+        affichage_fin()
+
+def affichage_fin():
+    donnee_finale = kppv.fonction_finale(kppv.formation_profil(profil_temporaire)) 
+    print(donnee_finale)
+    del document['choix1']
+    del document['choix2']
+    del document['choix3']
+    document['question'].textContent = "D'après ce test, tu es dans la maison..."
+    document <= html.H1(donnee_finale[0])
+    document <= html.H1("Les personnages les plus proches de toi sont : ")
+    document <= html.H2(donnee_finale[1][0][0])
+    document <= html.H2(donnee_finale[1][0][1])
+    document <= html.H2(donnee_finale[1][1][0])
+    document <= html.H2(donnee_finale[1][1][1])
+    document <= html.H2(donnee_finale[1][2][0])
+    document <= html.H2(donnee_finale[1][2][1])
 
 nouvelle_question()
-
 document['choix1'].bind('click', reponse1)
 document['choix2'].bind('click', reponse2)
 document['choix3'].bind('click', reponse3)

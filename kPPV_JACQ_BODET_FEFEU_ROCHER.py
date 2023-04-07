@@ -106,20 +106,29 @@ def neighbors_index(k, tab):
     return liste_neighbors_index
 
 
-def most_frequent(list):
-    """
-    Renvoie le premier élément le plus fréquent. S'il y a égalité, il 
-    renvoie le premier de la liste, soit le plus proche du profil de départ
-
-    Entrée : list, liste de maisons
-    Sortie : out[0],  élément le plus fréquent de la liste
-    """
-
-    counts = Counter(list)
-    max_count = counts.most_common(1)[0][1]
-    out = [value for value, count in counts.most_common() if count == max_count]
-
-    return out[0]
+def most_frequent1(list):
+    houses_dic = {'Gryffindor': 0,
+                  'Ravenclaw': 0,
+                  'Slytherin': 0,
+                  'Hufflepuff': 0}
+    for i in list:
+        if i == 'Gryffindor':
+            houses_dic['Gryffindor'] += 1 
+        if i == 'Ravenclaw':
+            houses_dic['Ravenclaw'] += 1
+        if i == 'Slytherin':
+            houses_dic['Slytherin'] += 1
+        if i == 'Hufflepuff':
+            houses_dic['Hufflepuff'] += 1
+    best_house_tab = []
+    max = 0
+    for item in houses_dic.items():
+        if item[1] > max:
+            max = item[1]
+            best_house_tab = [item[0]]
+        elif item[1] == max:
+            best_house_tab.append(item[0])
+    return best_house_tab
 
 def fonction_finale(profil):
     '''
@@ -136,7 +145,7 @@ def fonction_finale(profil):
     houses = []
     for i in index:
         houses.append(index_id[i]['House']) # Détermine la maison à attribuer   
-    final_house = (most_frequent(houses))
+    final_house = (most_frequent1(houses))
     response = []
     for i in index:
         response.append((index_id[i]['Name'], index_id[i]['House']))
